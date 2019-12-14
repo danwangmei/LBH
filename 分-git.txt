@@ -1,0 +1,62 @@
+1.查看状态
+1.1 	$ git status
+
+2.查看日志
+2.1 	$ git log
+
+3.alias 提高效率
+3.1 co替代checkout
+	$ git config --global alias.co checkout
+3.2 ci替代commit
+	$ git config --global alias.ci commit
+3.3 st替代status
+	$ git config --global alias.st status
+3.4 br替代branch
+	$ git config --global alias.br branch
+3.5 logg替代log
+	$ git config --global alias.logg "log --graph --decorate --all"
+
+4.查看本地所有分支
+4.1 	$ git branch -v 
+	$ git branch
+	$ git br (使用了alias: $ git config --global alias.br branch)
+
+5.查看远端所有分支
+5.1	$ git branch -va
+	$ git br -va (使用了alias: $ git config --global alias.br branch)
+
+6.切换到develop分支
+6.1	$ git checkout develop 
+
+7.将develop分支合并到当前分支
+7.1	$ git merge develop
+
+8.删除本地分支feature-facelib
+8.1	$ git branch -d feature-facelib
+	$ git br -d feature-facelib (使用了alias: $ git config --global alias.br branch)
+
+9.删除远程的分支feature-facelib
+9.1	$ git push origin -d feature-facelib 
+
+10.删除文件夹
+10.1	$ rm -rf 文件夹名
+
+11.删除文件
+11.1	$ rm 文件名
+
+12.显示分支图
+12.1	$ git log --decorate --oneline --graph --all
+
+13.显示简洁日志
+13.1	命令后面加 --oneline
+
+14.查看HEAD指向
+14.1	$ git log --decorate
+
+15.对比参数详解
+diff:对比的文件
+index:权限
+--:指旧文件
+++:指新文件
+@@ @@:指差异部分区域;-数字:指旧文件起始行;+数字1,数字2:值指新文件起始行,逗号后的数字值往下行数
+  

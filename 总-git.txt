@@ -1,0 +1,38 @@
+1.全局设置
+1.1 全局配置用户名 
+	$ git config --global user.name "廖标华w13339"
+1.2 全局配置邮箱
+	$ git config --global user.email "13339@sangfor.com"
+1.3 生成SSH公钥对
+	$ ssh-keygen -t rsa -C "dwm_lbh@sina,com"
+1.3.1 是否设置密码
+	Enter passphrase (empty for no passphrase):
+	Enter same passphrase again:
+1.3.2 输出公钥内容
+	$ cat  ~/.ssh/id_rsa.pub
+1.4 针对 https 协议的仓库,记住密码,避免每次都要求输入密码
+	$ git config --global credential.helper store
+
+2.创建项目文件夹myproject
+2.1 	$ mkdir myproject
+
+3.远程克隆项目到本地仓库
+3.1 	$ git clone http://code.sangfor.org/test/ATT/devops/sf-portal.git
+
+4.进入git控制的拉取的项目文件夹(即git工具显示本地的主支或分支)
+4.1 	$ cd sf-portal
+
+5.自动创建一个新的本地分支feature-lbh并切换到新的本地分支,并与指定的远程分支dev-1.0关联起来
+5.1 	$ git checkout -b feature-lbh origin/dev-1.0
+
+6.修改的文件全选提交到暂存区
+6.1 	$ git add .
+
+7.将缓存区的代码提交到本地仓库,"这是一些描述信息"
+7.1 	$ git commit -m "refact:工作台状态修改后计数更新" 
+
+8.推送到远程仓库(设置了1.4就不需要http协议了直接:git pull)
+8.1 	$ git push http://code.sangfor.org/test/ATT/devops/sf-portal.git
+
+9.拉取远程的代码(设置了1.4就不需要http协议了直接:git pull)
+9.1 	$ git pull
