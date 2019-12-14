@@ -1,86 +1,88 @@
 1.查看状态
 1.1 	$ git status
-1.1	$ git st (使用了alias: $ git config --global alias.br branch)
+1.2	$ git st (使用了alias: $ git config --global alias.br branch)
 
-2.查看日志
-2.1 	$ git log
-2.2 只显示提交信息的第一行	
+1.查看日志
+1.1 	$ git log
+1.2 只显示提交信息的第一行	
 	$ git log --pretty=short
-2.3 查看指定目录日志
+1.3 查看指定目录日志
 	$ git log <目录名>
-2.4 查看指定文件的日志
+1.4 查看指定文件的日志
 	$ git log <文件名>
-2.5 查看文件的改动
-	4 git log -p <文件名>
+1.5 查看文件的改动
+	1 git log -p <文件名>
 
-3.alias 提高效率
-3.1 co替代checkout
+1.alias提高效率
+1.1 co替代checkout
 	$ git config --global alias.co checkout
-3.2 ci替代commit
+1.2 ci替代commit
 	$ git config --global alias.ci commit
-3.3 st替代status
+1.3 st替代status
 	$ git config --global alias.st status
-3.4 br替代branch
+1.4 br替代branch
 	$ git config --global alias.br branch
-3.5 logg替代log
+1.5 logg替代log
 	$ git config --global alias.logg "log --graph --decorate --all"
 
-4.查看本地所有分支
-4.1 	$ git branch -v 
+1.查看分支
+1.1本地所有分支
+ 	$ git branch -v 
 	$ git branch
 	$ git br (使用了alias: $ git config --global alias.br branch)
-
-5.查看远端所有分支
-5.1	$ git branch -va
+1.2查看远端所有分支
+	$ git branch -va
 	$ git br -va (使用了alias: $ git config --global alias.br branch)
 
-6.切换到develop分支
-6.1	$ git checkout develop 
+1.切换到develop分支
+1.1	$ git checkout develop 
 
-7.将develop分支合并到当前分支
-7.1	$ git merge develop
+1.合并分支
+1.1 注意切回合并的分支或者主支上,简单地把指针右移,叫做"快进"
+	$ git merge 被合并的分支名
+1.2 禁止了快进,生成一个新的提交的合并
+	$ git --no-ff 被合并的分支名
+从合并后的代码来看,结果其实是一样的,区别就在于--no-ff会让Git生成一个新的提交对象.为什么要这样？通常我们把master作为主分支,上面存放的都是比较稳定的代码,提交频率也很低,而feature是用来开发特性的,上面会存在许多零碎的提交,快进式合并会把feature的提交历史混入到master中,搅乱 master的提交历史
 
-8.删除本地分支feature-facelib
-8.1	$ git branch -d feature-facelib
+
+1.显示分支图
+1.1	$ git log --decorate --oneline --graph --all
+1.2以图表形式查看分支
+	$ git log --graph
+
+1.删除分支
+1.1删除本地分支feature-facelib
+	$ git branch -d feature-facelib
 	$ git br -d feature-facelib (使用了alias: $ git config --global alias.br branch)
+1.2删除远程的分支feature-facelib
+	$ git push origin -d feature-facelib 
 
-9.删除远程的分支feature-facelib
-9.1	$ git push origin -d feature-facelib 
+1.删除文件夹
+1.1	$ rm -rf 文件夹名
 
-10.删除文件夹
-10.1	$ rm -rf 文件夹名
+1.删除文件
+1.1	$ rm 文件名
 
-11.删除文件
-11.1	$ rm 文件名
+1.显示简洁日志
+1.1	命令后面加 --oneline
 
-12.显示分支图
-12.1	$ git log --decorate --oneline --graph --all
+1.查看HEAD指向
+1.1	$ git log --decorate
 
-13.显示简洁日志
-13.1	命令后面加 --oneline
-
-14.查看HEAD指向
-14.1	$ git log --decorate
-
-15.查看更改前后的差别
-15.1 查看工作树和暂存区的差别	
+1.查看更改前后的差别
+1.1 查看工作树和暂存区的差别	
 	$ git diff
-15.2 查看工作树和最新的提交的差别
+1.1 查看工作树和最新的提交的差别
 	$ git diff HEAD
 
-16.对比参数详解
+1.对比参数详解
 diff:对比的文件
 index:权限
 --:指旧文件
 ++:指新文件
-@@ @@:指差异部分区域;-数字:指旧文件起始行;+数字1,数字2:值指新文件起始行,逗号后的数字值往下行数
+@@ @@:指差异部分区域;-数字:指旧文件起始行;+数字1,数字1:值指新文件起始行,逗号后的数字值往下行数
 
-17.合并分支
-17.1 注意切回合并的分支或者主支上,简单地把指针右移,叫做"快进"
-	$ git merge 被合并的分支名
-17.2 禁止了快进,生成一个新的提交的合并
-	$ git --no-ff 被合并的分支名
-从合并后的代码来看,结果其实是一样的,区别就在于--no-ff会让Git生成一个新的提交对象.为什么要这样？通常我们把master作为主分支,上面存放的都是比较稳定的代码,提交频率也很低,而feature是用来开发特性的,上面会存在许多零碎的提交,快进式合并会把feature的提交历史混入到master中,搅乱 master的提交历史
+
 
 
 
