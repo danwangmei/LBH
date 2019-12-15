@@ -46,7 +46,8 @@
 
 
 1.显示分支图
-1.1	$ git log --decorate --oneline --graph --all
+1.1查看分支
+	$ git log --decorate --oneline --graph --all
 1.2以图表形式查看分支
 	$ git log --graph
 
@@ -72,7 +73,7 @@
 1.查看更改前后的差别
 1.1查看工作树和暂存区的差别	
 	$ git diff
-1.2查看工作树和最新的提交的差别
+1.2查看工作树和最新的提交的差别,git commit命令之前执行再提交
 	$ git diff HEAD
 1.3对比参数详解
 diff:对比的文件
@@ -90,7 +91,7 @@ index:权限
 	$ git checkout -b 修补分支名
 1.1.4修改代码,保存暂存区,提交
 	$ git add .
-	$ git commit -m "fix;xxx"
+	$ git commit -m "fix:xxx"
 1.1.5查看操作日志
 	$ git reflog
 1.1.6切回主分支master
