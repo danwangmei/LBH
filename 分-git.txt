@@ -12,8 +12,6 @@
 	$ git log <文件名>
 1.5 查看文件的改动
 	1 git log -p <文件名>
-1.6 查看文件的操作日志
-	$ git reflog
 
 1.alias提高效率
 1.1 co替代checkout
@@ -88,7 +86,7 @@ index:权限
 1.1.1查看操作日志
 	$ git reflog
 1.1.2回溯到创建某分支创建前的版本号
-	$ git reset --hard 某分支创建前的版本号
+	$ git reset 某分支创建前的版本号
 1.1.3创建修补分支
 	$ git checkout -b 修补分支名
 1.1.4修改代码,保存暂存区,提交
@@ -99,13 +97,13 @@ index:权限
 1.1.6切回主分支master
 	$ git checkout master
 1.1.7回溯到创建某分支合并后的版本号
-	$ git reset --hard 某分支合并后的版本号
+	$ git reset 某分支合并后的版本号
 1.1.8合并修补分支
 	$ git merge --no-ff 修补分支名
 1.1.9本地修改冲突,保存暂存区,提交
 	$ git add .
 	$ git commit -m "fix:config"
-1.1.10修改上一次的提交
+1.1.10修改上一次的提交(注意还没有提交到远程分支)
 	$ git commit --amend
 1.1.10.1按键盘字母i进入insert模式
 1.1.10.2修改最上面那行黄色合并信息,可以不修改
